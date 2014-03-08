@@ -217,9 +217,9 @@ pip-log.txt
 
 
 
-DotSurvival/Temp
-DotSurvival/obj
-DotSurvival/Library
-DotSurvival/*.csproj
-DotSurvival/*.unityproj
-DotSurvival/*.sln
+/DotSurvival/Temp
+/DotSurvival/obj
+/DotSurvival/Library
+/DotSurvival/*.csproj
+/DotSurvival/*.unityproj
+/DotSurvival/*.sln
