@@ -3,11 +3,17 @@ using System.Collections;
 
 public class DotMove : MonoBehaviour {
 
-	Vector3 dot;
+	public Vector2 dot;
+	public Camera cam;
+	Vector3 camCoord;
+	public float speed;
 	// Use this for initialization
 	void Start () 
 	{
+		speed = 0.1f;
 		dot = transform.localPosition;
+		camCoord = transform.localPosition;
+		camCoord.z = -1.0f;
 	}
 	
 	// Update is called once per frame
@@ -15,20 +21,33 @@ public class DotMove : MonoBehaviour {
 	{
 		if (Input.GetKey (KeyCode.UpArrow)) 
 		{
-			dot.y += 0.1f;
+			dot.y += speed;
+			camCoord.y += speed;
 		}
+
+
 		if (Input.GetKey (KeyCode.DownArrow)) 
 		{
-			dot.y -= 0.1f;
+			dot.y -= speed;
+			camCoord.y -= speed;
 		}
+
+
 		if (Input.GetKey (KeyCode.LeftArrow)) 
 		{
-			dot.x -= 0.1f;
+			dot.x -= speed;
+			camCoord.x -= speed;
 		}
+
+
 		if (Input.GetKey (KeyCode.RightArrow)) 
 		{
-			dot.x += 0.1f;
+			dot.x += speed;
+			camCoord.x += speed;
 		}
+
+		cam.transform.localPosition = camCoord;
+
 		transform.localPosition = dot;
 	}
 }
